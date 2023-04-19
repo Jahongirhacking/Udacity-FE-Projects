@@ -1,0 +1,134 @@
+body{
+    background: #fffff8;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    background-image: url("./img/wallpapersden.com_landscape-pixel-art_1336x768.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#app{
+    display: flex;
+    /* grid-template-columns:  */
+    height:100vh;
+    background: #242424b7;
+    color: #0dc487;
+    justify-content: space-evenly;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.holder{
+    font-size: 1.5em;
+    padding: 10px;
+    max-width: 300px;
+}
+
+.entry{
+    background: rgba(59, 74, 107, .4);
+}
+
+#entryHolder{
+
+}
+
+#date{
+
+}
+
+#temp{
+
+}
+
+#content{
+
+}
+
+.headline {
+
+}
+.title{
+    font-weight: bold;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:block;
+    font-size: 27px;
+}
+
+input{
+    display:block;
+    height: 60px;
+    width: 100%;
+    background:#000000;
+    color: #f0d43a;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    padding: 3px;
+}
+
+button{
+    width: 400px;
+    height: 100px;
+    background: #000000;
+    color: #0bbb72;
+    font-size: 26px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px rgb(0, 0, 0);
+    display: block;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    width: 100%;
+}
+
+button:hover{
+    background: #0bbb72;
+    color: #000000;
+}
+
+h1{
+    font-size: 36px;
+}
+
+textarea{
+    background:#000000;
+    color: #f0d43a;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    padding: 3px;
+    width: 100%;
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #f0d53a7a; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: #f0d53a85; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: #f0d53a7e; 
+    font-family: 'Oswald', sans-serif;
+
+} 

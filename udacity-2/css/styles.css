@@ -1,0 +1,346 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+
+
+/* ---- Base Rules ---- */
+body {
+    background: rgb(136,203,171);
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    background-color: rgba(255, 255, 255, 0.103);
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.137);
+    border-radius: 6px;
+}
+
+
+/* Typeography General*/
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em){
+    h1 {
+        font-size: 7em;
+        margin: 2em 4rem 1em;
+    }
+}
+
+h2 {
+    border-bottom: 1px solid rgb(17, 176, 204);
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+    color: #fff;
+}
+
+p {
+    line-height: 1.6em;
+    color: #eee;
+}
+
+/* ---- Layout Rules ---- */
+main {
+    margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+
+section {
+    position: relative;
+    min-height: 60vh;
+}
+
+
+/* ---- Module Rules ---- */
+
+/* Navigation Styles*/
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 auto;
+    width: fit-content;
+    justify-content: space-evenly;
+    max-height: 90px;
+    overflow-y: auto;
+}
+
+.navbar__menu li {
+    display: inline-block;
+}
+
+.navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.navbar__menu .menu__link:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(31, 188, 209);
+    transition: ease 0.3s all;
+}
+
+.navbar__menu .menu__link--active{
+    color: rgb(0, 0, 0);
+    background: rgb(31, 188, 209);
+    transition: ease 0.3s all;
+}
+
+/* Header Styles */
+.page__header {
+    background: #000818ad;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+/* Footer Styles */
+.page__footer {
+    background: #000;
+    padding: 3em;
+    color: #fff;
+}
+
+.page__footer p{
+    color: #fff;
+}
+
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+
+@media only screen and (min-width: 35em){
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right; 
+}
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    background: rgba(255, 255, 255, 0.187);
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.active {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.171) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+section.active .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.active .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+#toTop{
+    background-color: rgba(19, 172, 192, 0.425);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15pt;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 18px 20px;
+    border-radius: 50%;
+}
+
+.landing__container>h2>i{
+    color: white;
+    font-size: 24pt;
+    cursor: pointer;
+}
+
+@keyframes hiding {
+    0%{
+        height: 90%;
+        opacity: 1;
+    }100%{
+        height: 0%;
+        opacity: 0;
+    }
+}
+
+@keyframes revealing {
+    0%{
+        height: 0%;
+        opacity: 0;
+    }100%{
+        height: 90%;
+        opacity: 1;
+    }
+}
+
+.landing_less>p{
+    overflow: hidden;
+    animation: hiding 1s;
+    height:0%;
+}
+
+.landing_more{
+    overflow: hidden;
+    animation: revealing 1s;
+    height:fit-content;
+}
+
+@media (max-width:450px) {
+    .navbar__menu .menu__link {
+        padding: 0.5em;
+    }
+}
+
+/* NEW SECTION */
+article{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+article>form>input{
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+}
+article>form>textarea{
+    display: block;
+    width: 80%;
+    height: 120px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    margin: 15px auto;
+    outline: none;
+}
+
+article>form>button{
+    background-color: rgb(9, 110, 156);
+    color: white;
+    font-size: 14pt;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+	from {
+		transform: rotate(0deg)
+		           translate(-1em)
+		           rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg)
+		           translate(-1em) 
+		           rotate(-360deg);
+	}
+}

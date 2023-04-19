@@ -1,0 +1,41 @@
+$clr_green: rgb(55, 211, 138);
+$clr_black: rgb(26, 26, 26);
+$clr_green_blur: rgba(55, 211, 138, 0.644);
+$clr_black_blur: rgba(26, 26, 26, 0.664);
+$fnt_sz: 15pt;
+
+form {
+    border: 1px solid #3c926a;
+    border-radius: 3px;
+    padding: 40px;
+    background-color: $clr_green_blur;
+    backdrop-filter: blur(3px);
+    color: $clr_black;
+    font-size: $fnt_sz;
+
+    input {
+        padding: 5px 20px;
+        width: 100%;
+        line-height: 16px;
+        margin: 10px 0;
+        background-color: $clr_green;
+        color: $clr_black;
+        border: 1px solid #3c926a;
+        font-size: $fnt_sz;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    input[type=submit]{
+        background-color: $clr_green;
+        color: $clr_black;
+        font-size: $fnt_sz;
+        padding: 15px 10px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

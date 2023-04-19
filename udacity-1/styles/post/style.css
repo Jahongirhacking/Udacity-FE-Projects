@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+:root{
+    --light-blue: rgb(39, 155, 184);
+    --light-gray: rgb(216, 216, 216);
+}
+
+::-webkit-scrollbar{
+    background-color: var(--light-gray);
+    width: 8px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(189, 189, 189);
+    border-radius: 10px;
+}
+
+body{
+    background-color: white;
+    font-size: 12pt;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 25px;
+}
+
+i{
+    font-style: normal;
+}
+
+.social-sharing{
+    font-size: 15pt;
+}
+
+.social-sharing>b{
+    margin-right: 15px;
+}
+
+.social-sharing>a{
+    margin-left: 5px;
+}
+
+.social-sharing>a:hover{
+    text-decoration: none;
+}
+
+.container{
+    display: grid;
+    grid-gap: 20px;
+    padding: 5vh 10vw;
+    margin: auto;
+}
+
+.about-user{
+    display: flex;
+    align-items: center;
+}
+
+.about-user>#img-user{
+    background-image: url("../../Images/Me.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.about-user>.info{
+    display: grid;
+    margin-left: 10px;
+}
+
+#name{
+    color: var(--light-blue);
+}
+
+.quot{
+    padding: 10px 8px;
+    border-left: 4px solid black;
+}
+
+.back-img{
+    width: 98%;
+    height: 30vh;
+}
+
+figcaption{
+    margin-top: 20px;
+}
+
+code{
+    background-color: #eee;
+    border: 1px solid #999;
+    padding: 1px 2px;
+}
+
+pre>code {
+    background-color: #eee;
+    border: none;
+    border-left: 4px solid var(--light-blue);
+    display: block;
+    padding: 20px;
+}
+
+a{
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+ul,ol{
+    padding-left: 15px;
+}
+
+@media (max-width: 600px) {
+    body{
+        font-size: 10pt;
+    }
+
+    pre>code {
+        background-color: #eee;
+        border: none;
+        border-left: 4px solid var(--light-blue);
+        display: block;
+        padding: 10px;
+        font-size: 8pt;
+    }
+    
+}

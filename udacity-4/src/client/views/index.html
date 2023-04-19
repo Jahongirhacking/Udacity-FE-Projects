@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Evaluate a News Article with Natural Language Processing</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <div class="container">
+            <main>
+                <section>
+                    <form class="" onsubmit="return Client.handleSubmit(event)">
+                        <label for="url">Enter the URL link of an article or a blog you want</label>
+                        <input id="url" type="text" name="url" value="" autocomplete="off" placeholder="Enter the URL">
+                        <input type="submit" name="submit" id="submit" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    </form>
+                </section>
+    
+                <section>
+                    <h2>Form Results:</h2>
+                    <div id="results">
+                        <p>URL: <span id="article_url"></i></span></p>
+                        <p>Agreement: <span id="agreement"></span></p>
+                        <p>Confidence: <span id="confidence"></span></p>
+                        <p>Irony: <span id="irony"></span></p>
+                        <p>Subjectivity: <span id="subjectivity"></span></p>
+                        <p>Score: <span id="score"></span></p>
+                    </div>
+                </section>
+            </main>
+    
+            <footer>
+                <p>Copyright &copy Udacity 2021 - created by Jahongir Hayitov</p>
+            </footer>
+        </div>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+.header{
+    grid-area: hd;
+    background-color: var(--light-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}

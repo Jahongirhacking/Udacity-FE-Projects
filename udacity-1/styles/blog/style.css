@@ -1,0 +1,113 @@
+@import url("./header.css");
+@import url("./aside.css");
+@import url("./main.css");
+@import url("./footer.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+:root{
+    --light-blue: rgb(39, 155, 184);
+    --light-gray: rgb(216, 216, 216);
+}
+
+::-webkit-scrollbar{
+    background-color: var(--light-gray);
+    width: 8px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(189, 189, 189);
+    border-radius: 10px;
+}
+
+body{
+    background-color: white;
+    font-size: 14pt;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: 80px 1fr 40px;
+    grid-template-areas:
+    "hd hd"
+    "as mn"
+    "ft ft";
+    height: 100vh;
+}
+
+@media (max-width: 600px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto 1fr 40px;
+        grid-template-areas:
+        "hd"
+        "mn"
+        "as"
+        "ft";
+        height: 100vh;
+    }
+
+    .aside>.links{
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        font-size: 11pt;
+        grid-gap: 8px;
+        margin-bottom: 10px;
+        padding: 5px 25px;
+    }
+
+    .aside>.links>a{
+        margin: auto;
+    }
+
+    .main>h3{
+        font-size: 12pt;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 950px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto 1fr 40px;
+        grid-template-areas:
+        "hd"
+        "mn"
+        "as"
+        "ft";
+        height: 100vh;
+    }
+
+    .aside>.links{
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        font-size: 11pt;
+        grid-gap: 20px;
+        margin-bottom: 10px;
+        padding: 5px 25px;
+    }
+
+    .aside>.links>a{
+        margin: auto;
+    }
+
+    .main>h3{
+        font-size: 14pt;
+    }
+
+    .main>.cards>.card{
+        width: 350px;
+    }
+}
