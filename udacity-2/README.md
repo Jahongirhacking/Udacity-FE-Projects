@@ -1,6 +1,8 @@
 # Project Title
 ## _Personal Landing Page Project_
 
+https://project-udacity-2.netlify.app/
+
 
 - [Demo-Preview](#demo-preview)
 - [Technologies used in the project](#technologies-used-in-the-project)
